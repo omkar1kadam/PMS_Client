@@ -208,7 +208,7 @@ export default function ProjectPage() {
    }
 
    return (
-    <div className="min-h-screen bg-background animate-in fade-in-0 duration-700">
+    <div className="min-h-screen bg-gray-50 animate-in fade-in-0 duration-700">
       {/* Header */}
       <div className="bg-card border-b border-border shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
@@ -341,6 +341,29 @@ export default function ProjectPage() {
                   <CardTitle className="text-lg sm:text-xl">Technical Documentation</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-6 sm:space-y-8">
+                  
+                {project.systemArchitecture && (
+                    <div className="animate-in slide-in-from-left-3 duration-500" style={{ animationDelay: "0.7s" }}>
+                      <h3 className="text-base sm:text-lg font-semibold flex items-center gap-2 mb-4">
+                        <Network className="h-4 w-4 sm:h-5 sm:w-5" />
+                        System Architecture
+                      </h3>
+                      <div
+                        className="aspect-video rounded-lg overflow-hidden bg-muted border relative group cursor-pointer transform hover:scale-[1.02] transition-transform duration-300"
+                        onClick={() => openFullscreen(project.systemArchitecture!, "System Architecture")}
+                      >
+                        <img
+                          src={project.systemArchitecture || "/placeholder.svg"}
+                          alt="System Architecture"
+                          className="w-full h-full object-contain p-2 sm:p-4 transition-transform duration-300 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
+                          <Maximize2 className="h-6 w-6 sm:h-8 sm:w-8 text-white opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110" />
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
                   {project.erDiagram && (
                     <div className="animate-in slide-in-from-left-3 duration-500" style={{ animationDelay: "0.6s" }}>
                       <h3 className="text-base sm:text-lg font-semibold flex items-center gap-2 mb-4">
@@ -363,27 +386,7 @@ export default function ProjectPage() {
                     </div>
                   )}
 
-                  {project.systemArchitecture && (
-                    <div className="animate-in slide-in-from-left-3 duration-500" style={{ animationDelay: "0.7s" }}>
-                      <h3 className="text-base sm:text-lg font-semibold flex items-center gap-2 mb-4">
-                        <Network className="h-4 w-4 sm:h-5 sm:w-5" />
-                        System Architecture
-                      </h3>
-                      <div
-                        className="aspect-video rounded-lg overflow-hidden bg-muted border relative group cursor-pointer transform hover:scale-[1.02] transition-transform duration-300"
-                        onClick={() => openFullscreen(project.systemArchitecture!, "System Architecture")}
-                      >
-                        <img
-                          src={project.systemArchitecture || "/placeholder.svg"}
-                          alt="System Architecture"
-                          className="w-full h-full object-contain p-2 sm:p-4 transition-transform duration-300 group-hover:scale-105"
-                        />
-                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
-                          <Maximize2 className="h-6 w-6 sm:h-8 sm:w-8 text-white opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110" />
-                        </div>
-                      </div>
-                    </div>
-                  )}
+
                 </CardContent>
               </Card>
             )}
@@ -394,7 +397,7 @@ export default function ProjectPage() {
             {/* Team Information */}
             <Card className="shadow-sm hover:shadow-md transition-shadow duration-300">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-lg sm:text-xl">
+                <CardTitle className="flex items-center gap-2 text-lg sm:text-xl ">
                   <Users className="h-4 w-4 sm:h-5 sm:w-5" />
                   Team Members
                 </CardTitle>
@@ -407,7 +410,7 @@ export default function ProjectPage() {
                       <Crown className="h-4 w-4" />
                       Team Leader
                     </h4>
-                    <div className="flex items-center gap-3 p-3 rounded-lg bg-accent/10 border border-accent/20 hover:bg-accent/20 transition-colors duration-200">
+                    <div className="flex items-center gap-3 p-3 rounded-lg bg-accent/10 border border-accent/20 hover:scale-105  hover:bg-purple-100 hover:border-purple-200 transition-all duration-200">
                       <Avatar className="h-8 w-8 sm:h-10 sm:w-10 hover:scale-110 transition-transform duration-200">
                         <AvatarImage src={leader.avatar || "/placeholder.svg"} alt={leader.name} />
                         <AvatarFallback className="bg-accent text-accent-foreground text-xs sm:text-sm">
@@ -436,7 +439,7 @@ export default function ProjectPage() {
                       {members.map((member, index) => (
                         <div
                           key={member.id}
-                          className="flex items-center gap-3 p-2 rounded-lg hover:bg-muted/50 transition-colors duration-200 animate-in slide-in-from-right-2"
+                          className="flex items-center gap-3 p-2 rounded-lg animate-in slide-in-from-right-2 hover:scale-105  hover:bg-purple-100 hover:border-purple-200 transition-all duration-200"
                           style={{ animationDelay: `${1 + index * 0.1}s` }}
                         >
                           <Avatar className="h-6 w-6 sm:h-8 sm:w-8 hover:scale-110 transition-transform duration-200">

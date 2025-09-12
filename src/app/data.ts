@@ -3,7 +3,7 @@ const data = {
   title: "E-Commerce Management System",
   description:
     "A comprehensive e-commerce platform built with Next.js and Node.js, featuring user authentication, product management, order processing, and payment integration. The system includes an admin dashboard for inventory management, sales analytics, and customer support. Built with modern web technologies and follows best practices for scalability and security.",
-  image: "/modern-ecommerce-dashboard.png",
+  image: "/hamster.jpeg",
   members: [
     {
       id: "1",
@@ -42,8 +42,8 @@ const data = {
   githubUrl: "https://github.com/team/ecommerce-system",
   deployedUrl: "https://ecommerce-demo.vercel.app",
   submissionDate: "2024-12-15T10:30:00Z",
-  erDiagram: "/database-er-diagram-with-tables-and-relationships.jpg",
-  systemArchitecture: "/system-architecture-diagram-with-microservices.jpg",
+  erDiagram: "/image5.png",
+  systemArchitecture: "/diag.jpg",
   //status: "completed",
   tags: ["Next.js", "Node.js", "PostgreSQL", "Stripe", "Tailwind CSS", "TypeScript"],
 }

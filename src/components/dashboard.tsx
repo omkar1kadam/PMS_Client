@@ -155,7 +155,7 @@ export default function Dashboard( ) {
   }
 
   return (
-    <div className="min-h-screen bg-background p-4 sm:p-6">
+    <div className="min-h-screen  bg-gray-100 p-4 sm:p-6">
       <div className="max-w-7xl mx-auto space-y-6 sm:space-y-8">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
@@ -166,7 +166,7 @@ export default function Dashboard( ) {
           <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
             <Button
               variant="outline"
-              className="border-border hover:bg-red-500 w-full sm:w-auto bg-transparent"
+              className="border-border hover:bg-red-500 w-full sm:w-auto bg-transparent hover:scale-105 hover:text-white transition-transform duration-200"
               onClick={() => {
                 //  yaha pe logout logic dal 
                 console.log("Logout clicked")
@@ -176,7 +176,7 @@ export default function Dashboard( ) {
               Logout
             </Button>
             <Link to={'/project/create'}>
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground w-full sm:w-auto">
+            <Button className="bg-primary text-primary-foreground w-full sm:w-auto hover:scale-105 hover:bg-purple-500 hover:text-white transition-transform duration-200">
               <Plus className="w-4 h-4 mr-2" />
               Create New Project
             </Button>

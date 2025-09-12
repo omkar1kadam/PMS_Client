@@ -119,7 +119,7 @@ export default function CreateProjectForm() {
     <div className="min-h-screen bg-gray-50">
       <div className="bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-blue-600 mb-2">Submit New Project</h1>
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-purple-600 mb-2">Submit New Project</h1>
           <p className="text-gray-600 text-sm sm:text-base">
             Fill out the form below to submit your project
           </p>
@@ -131,7 +131,7 @@ export default function CreateProjectForm() {
           {/* Project Details */}
           <Card className="shadow-sm hover:shadow-md transition-shadow duration-300">
             <CardHeader>
-              <CardTitle className="text-lg sm:text-xl text-blue-600">Project Details</CardTitle>
+              <CardTitle className="text-lg sm:text-xl text-purple-600">Project Details</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4 sm:space-y-6">
               <div>
@@ -140,7 +140,7 @@ export default function CreateProjectForm() {
                   placeholder="Enter your project title"
                   value={formData.title}
                   onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                  className="bg-white border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                  className="bg-white border-gray-300 focus:ring-purple-500 focus:border-purple-500"
                 />
               </div>
 
@@ -150,7 +150,7 @@ export default function CreateProjectForm() {
                   placeholder="Describe your project in detail..."
                   value={formData.description}
                   onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                  className="bg-white border-gray-300 focus:ring-blue-500 focus:border-blue-500 min-h-[100px]"
+                  className="bg-white border-gray-300 focus:ring-purple-500 focus:border-purple-500 min-h-[100px]"
                 />
               </div>
 
@@ -164,7 +164,7 @@ export default function CreateProjectForm() {
                       placeholder="Upload or paste image URL"
                       value={formData.image}
                       onChange={(e) => setFormData({ ...formData, image: e.target.value })}
-                      className="bg-white border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                      className="bg-white border-gray-300 focus:ring-purple-500 focus:border-purple-500"
                     />
                     <Upload className="absolute right-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none" />
                   </div>
@@ -176,7 +176,7 @@ export default function CreateProjectForm() {
                     placeholder="https://github.com/username/repo"
                     value={formData.githubUrl}
                     onChange={(e) => setFormData({ ...formData, githubUrl: e.target.value })}
-                    className="bg-white border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                    className="bg-white border-gray-300 focus:ring-purple-500 focus:border-purple-500"
                   />
                 </div>
               </div>
@@ -187,7 +187,7 @@ export default function CreateProjectForm() {
                   placeholder="https://your-project.vercel.app"
                   value={formData.deployedUrl}
                   onChange={(e) => setFormData({ ...formData, deployedUrl: e.target.value })}
-                  className="bg-white border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                  className="bg-white border-gray-300 focus:ring-purple-500 focus:border-purple-500"
                 />
               </div>
 
@@ -195,7 +195,7 @@ export default function CreateProjectForm() {
                 <label className="block text-gray-700 font-medium mb-3">Tech Stack </label>
                 <div className="space-y-3">
                   <Select onValueChange={addTechStack}>
-                    <SelectTrigger className="bg-white border-gray-300 focus:ring-blue-500 focus:border-blue-500">
+                    <SelectTrigger className="bg-white border-gray-300 focus:ring-purple-500 focus:border-purple-500">
                       <SelectValue placeholder="Select technologies used" />
                     </SelectTrigger>
                     <SelectContent>
@@ -209,7 +209,7 @@ export default function CreateProjectForm() {
                   {selectedTechStack.length > 0 && (
                     <div className="flex flex-wrap gap-2">
                       {selectedTechStack.map((tech) => (
-                        <Badge key={tech} variant="secondary" className="bg-blue-100 text-blue-800 hover:bg-blue-200">
+                        <Badge key={tech} variant="secondary" className="bg-purple-100 text-purple-800 hover:bg-purple-200">
                           {tech}
                           <button
                             type="button"
@@ -235,7 +235,7 @@ export default function CreateProjectForm() {
                       placeholder="Upload or paste diagram URL"
                       value={formData.erDiagram}
                       onChange={(e) => setFormData({ ...formData, erDiagram: e.target.value })}
-                      className="bg-white border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                      className="bg-white border-gray-300 focus:ring-purple-500 focus:border-purple-500"
                     />
                     <Upload className="absolute right-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none" />
                   </div>
@@ -250,7 +250,7 @@ export default function CreateProjectForm() {
                       placeholder="Upload or paste architecture URL"
                       value={formData.systemArchitecture}
                       onChange={(e) => setFormData({ ...formData, systemArchitecture: e.target.value })}
-                      className="bg-white border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                      className="bg-white border-gray-300 focus:ring-purple-500 focus:border-purple-500"
                     />
                     <Upload className="absolute right-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none" />
                   </div>
@@ -262,7 +262,7 @@ export default function CreateProjectForm() {
           {/* Team Leader */}
           <Card className="shadow-sm hover:shadow-md transition-shadow duration-300">
             <CardHeader>
-              <CardTitle className="text-lg sm:text-xl text-blue-600">Team Leader</CardTitle>
+              <CardTitle className="text-lg sm:text-xl text-purple-600">Team Leader</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4 sm:space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
@@ -272,7 +272,7 @@ export default function CreateProjectForm() {
                     placeholder="Enter leader's full name"
                     value={formData.leader.name}
                     onChange={(e) => setFormData({ ...formData, leader: { ...formData.leader, name: e.target.value } })}
-                    className="bg-white border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                    className="bg-white border-gray-300 focus:ring-purple-500 focus:border-purple-500"
                   />
                 </div>
 
@@ -285,7 +285,7 @@ export default function CreateProjectForm() {
                     onChange={(e) =>
                       setFormData({ ...formData, leader: { ...formData.leader, email: e.target.value } })
                     }
-                    className="bg-white border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                    className="bg-white border-gray-300 focus:ring-purple-500 focus:border-purple-500"
                   />
                 </div>
 
@@ -296,7 +296,7 @@ export default function CreateProjectForm() {
                       setFormData({ ...formData, leader: { ...formData.leader, department: value } })
                     }
                   >
-                    <SelectTrigger className="bg-white border-gray-300 focus:ring-blue-500 focus:border-blue-500">
+                    <SelectTrigger className="bg-white border-gray-300 focus:ring-purple-500 focus:border-purple-500">
                       <SelectValue placeholder="Select department" />
                     </SelectTrigger>
                     <SelectContent>
@@ -323,7 +323,7 @@ export default function CreateProjectForm() {
                         leader: { ...formData.leader, graduationYear: Number.parseInt(e.target.value) },
                       })
                     }
-                    className="bg-white border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                    className="bg-white border-gray-300 focus:ring-purple-500 focus:border-purple-500"
                   />
                 </div>
               </div>
@@ -333,7 +333,7 @@ export default function CreateProjectForm() {
           {/* Team Members */}
           <Card className="shadow-sm hover:shadow-md transition-shadow duration-300">
             <CardHeader>
-              <CardTitle className="flex items-center justify-between text-lg sm:text-xl text-blue-600">
+              <CardTitle className="flex items-center justify-between text-lg sm:text-xl text-purple-600">
                 Team Members (Optional)
                 <Button type="button" variant="outline" size="sm" onClick={addMember} disabled={members.length >= 4}>
                   <Plus className="h-4 w-4 mr-2" />
@@ -369,7 +369,7 @@ export default function CreateProjectForm() {
                           placeholder="Enter member's full name"
                           value={member.name}
                           onChange={(e) => updateMember(index, "name", e.target.value)}
-                          className="bg-white border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                          className="bg-white border-gray-300 focus:ring-purple-500 focus:border-purple-500"
                         />
                       </div>
 
@@ -380,14 +380,14 @@ export default function CreateProjectForm() {
                           placeholder="member@example.com"
                           value={member.email}
                           onChange={(e) => updateMember(index, "email", e.target.value)}
-                          className="bg-white border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                          className="bg-white border-gray-300 focus:ring-purple-500 focus:border-purple-500"
                         />
                       </div>
 
                       <div>
                         <label className="block text-gray-700 mb-2">Department </label>
                         <Select onValueChange={(value) => updateMember(index, "department", value)}>
-                          <SelectTrigger className="bg-white border-gray-300 focus:ring-blue-500 focus:border-blue-500">
+                          <SelectTrigger className="bg-white border-gray-300 focus:ring-purple-500 focus:border-purple-500">
                             <SelectValue placeholder="Select department" />
                           </SelectTrigger>
                           <SelectContent>
@@ -409,7 +409,7 @@ export default function CreateProjectForm() {
                           max="2030"
                           value={member.graduationYear}
                           onChange={(e) => updateMember(index, "graduationYear", Number.parseInt(e.target.value))}
-                          className="bg-white border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                          className="bg-white border-gray-300 focus:ring-purple-500 focus:border-purple-500"
                         />
                       </div>
                     </div>
@@ -422,7 +422,7 @@ export default function CreateProjectForm() {
           {/* Mentor */}
           <Card className="shadow-sm hover:shadow-md transition-shadow duration-300">
             <CardHeader>
-              <CardTitle className="text-lg sm:text-xl text-blue-600">Mentor (Optional)</CardTitle>
+              <CardTitle className="text-lg sm:text-xl text-purple-600">Mentor (Optional)</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4 sm:space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
@@ -432,7 +432,7 @@ export default function CreateProjectForm() {
                     placeholder="Enter mentor's full name"
                     value={formData.mentor.name}
                     onChange={(e) => setFormData({ ...formData, mentor: { ...formData.mentor, name: e.target.value } })}
-                    className="bg-white border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                    className="bg-white border-gray-300 focus:ring-purple-500 focus:border-purple-500"
                   />
                 </div>
 
@@ -445,7 +445,7 @@ export default function CreateProjectForm() {
                     onChange={(e) =>
                       setFormData({ ...formData, mentor: { ...formData.mentor, email: e.target.value } })
                     }
-                    className="bg-white border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                    className="bg-white border-gray-300 focus:ring-purple-500 focus:border-purple-500"
                   />
                 </div>
               </div>
@@ -457,7 +457,7 @@ export default function CreateProjectForm() {
             <Button
               type="submit"
               size="lg"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 shadow-lg hover:shadow-xl"
+              className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 shadow-lg hover:shadow-xl"
             >
               Submit Project
             </Button>

@@ -8,11 +8,11 @@ const App = () => {
   return (
     <div>
       <Routes>
-<Route path='/' element={
+<Route path='/project/details/:id' element={
       <Dashboard/>}
 />
 
-<Route path='/project/details/:id' element={
+<Route path='/' element={
       <ProjectPage/>
 }/>
 <Route path='/project/create' element={
