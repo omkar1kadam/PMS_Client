@@ -9,6 +9,7 @@ import { Plus, BarChart3, FolderOpen, ExternalLink, LogOut } from "lucide-react"
 import type { Project } from "types/project"
 import {BASE_URL} from "./AppUrl.js"
 import axios from "axios"
+import { Link } from "react-router-dom"
 
 //interface DashboardProps {
 //  isLoading?: boolean
@@ -20,13 +21,13 @@ interface DepartmentStats {
 }
 
 export default function Dashboard( ) {
-    const [isLoading, setIsLoading] = useState<boolean>(true)
+    const [isLoading, setIsLoading] = useState<boolean>(false)
   const [projects, setProjects] = useState<Project[]>([
     {
       id: "1",
       title: "E-Commerce Platform",
       description: "A modern e-commerce platform built with Next.js and Supabase",
-      image: "/modern-ecommerce-dashboard.png",
+      image: "/Amazon.jpeg",
       members: [
         { id: "1", name: "Sarah Johnson", department: "Computer Science", graduationYear: 2024, isLeader: true, email: "sarah.johnson@email.com" },
         { id: "2", name: "Mike Chen", department: "Computer Science", graduationYear: 2024, isLeader: false, email: "sarah.johnson@email.com" },
@@ -47,7 +48,7 @@ export default function Dashboard( ) {
       id: "2",
       title: "Student Management System",
       description: "A comprehensive system for managing student records and academic data",
-      image: "/student-management-dashboard.png",
+      image: "/Scre.png",
       members: [
         { id: "4", name: "Alex Rodriguez", department: "Software Engineering", graduationYear: 2024, isLeader: true, email: "sarah.johnson@email.com" },
         { id: "5", name: "Jessica Wong", department: "Computer Science", graduationYear: 2024, isLeader: false, email: "sarah.johnson@email.com" },
@@ -65,7 +66,7 @@ export default function Dashboard( ) {
       id: "3",
       title: "Healthcare Analytics Dashboard",
       description: "Real-time analytics dashboard for healthcare data visualization",
-      image: "/healthcare-analytics-dashboard.png",
+      image: "/skyrim.jpg",
       members: [
         { id: "6", name: "David Kim", department: "Data Science", graduationYear: 2025, isLeader: true, email: "sarah.johnson@email.com" },
         { id: "7", name: "Maria Garcia", department: "Information Systems", graduationYear: 2025, isLeader: false, email: "sarah.johnson@email.com" },
@@ -83,7 +84,7 @@ export default function Dashboard( ) {
       id: "4",
       title: "IoT Smart Home System",
       description: "Integrated IoT solution for smart home automation and monitoring",
-      image: "/smart-home-iot-dashboard.png",
+      image: "/picture-lake.jpg",
       members: [
         {
           id: "9",
@@ -123,7 +124,12 @@ export default function Dashboard( ) {
               },
             });
     
-            setProjects(response.data);
+            if (response.data && Array.isArray(response.data)) {
+              setProjects(response.data);
+            } else {
+              console.warn("Invalid data from API, keeping dummy data");
+            }
+
           } catch (error) {
             console.error(error);
           } finally {
@@ -144,7 +150,7 @@ export default function Dashboard( ) {
     return acc
   }, {} as DepartmentStats)
 
-  if (!isLoading) {
+  if (isLoading) {
     return <DashboardSkeleton />
   }
 
@@ -169,10 +175,12 @@ export default function Dashboard( ) {
               <LogOut className="w-4 h-4 mr-2" />
               Logout
             </Button>
+            <Link to={'/project/create'}>
             <Button className="bg-primary hover:bg-primary/90 text-primary-foreground w-full sm:w-auto">
               <Plus className="w-4 h-4 mr-2" />
               Create New Project
             </Button>
+            </Link>
           </div>
         </div>
 
