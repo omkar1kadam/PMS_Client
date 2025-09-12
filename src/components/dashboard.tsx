@@ -192,7 +192,7 @@ export default function Dashboard( ) {
               <FolderOpen className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
-              <div className="font-bold text-primary text-2xl sm:text-3xl">{totalProjects}</div>
+              <div className="font-bold text-primary text-2xl sm:text-4xl">{totalProjects}</div>
               <p className="text-xs text-muted-foreground">Active student projects</p>
             </CardContent>
           </Card>
@@ -210,7 +210,7 @@ export default function Dashboard( ) {
                   .map(([dept, count]) => (
                     <div key={dept} className="flex justify-between items-center">
                       <span className="text-xs text-card-foreground truncate pr-2">{dept}</span>
-                      <Badge variant="secondary" className="text-xs shrink-0">
+                      <Badge variant="secondary" className="text-xs shrink-0 bg-purple-50">
                         {count}
                       </Badge>
                     </div>
@@ -227,8 +227,7 @@ export default function Dashboard( ) {
             {projects.map((project) => (
               <Card
                 key={project.id}
-                className="bg-card border-border shadow-sm hover:shadow-md transition-shadow duration-200"
-              >
+                className="bg-card border-border shadow-sm hover:shadow-2xl hover:scale-105 transition-all duration-200 ease-in-out">
                 <div className="aspect-video relative overflow-hidden rounded-t-lg">
                   <img
                     src={project.image || "/placeholder.svg"}
@@ -244,12 +243,12 @@ export default function Dashboard( ) {
 
                   <div className="flex flex-wrap gap-1 mb-3">
                     {project.tags.slice(0, 2).map((tag) => (
-                      <Badge key={tag} variant="outline" className="text-xs">
+                      <Badge key={tag} variant="outline" className="text-xs bg-purple-500 text-white">
                         {tag}
                       </Badge>
                     ))}
                     {project.tags.length > 2 && (
-                      <Badge variant="outline" className="text-xs">
+                      <Badge variant="outline" className="text-xs bg-purple-500 text-white">
                         +{project.tags.length - 2}
                       </Badge>
                     )}

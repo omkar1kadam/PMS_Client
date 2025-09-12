@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@geist-ui/react": "^2.2.5",
     "@radix-ui/react-avatar": "^1.1.10",
     "@radix-ui/react-select": "^2.2.6",
     "@radix-ui/react-slot": "^1.2.3",
@@ -19,8 +20,10 @@
     "clsx": "^2.1.1",
     "ldrs": "^1.1.7",
     "lucide-react": "^0.543.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "next": "^15.5.3",
+    "next-themes": "^0.4.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-router-dom": "^7.8.2",
     "tailwind-merge": "^3.3.1"
   },
